@@ -10,7 +10,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-#elixir exenv settings
+# elixir exenv settings
 export PATH="$HOME/.exenv/bin:$PATH"
 eval "$(exenv init -)"
 
@@ -19,6 +19,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# rust settings
+export PATH="$HOME/.cargo/bin:$PATH"
 
 git-cleanup() {
   git fetch --prune && (git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d)
