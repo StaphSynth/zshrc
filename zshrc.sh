@@ -11,8 +11,8 @@ eval "$(rbenv init - zsh)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # elixir exenv settings
-export PATH="$HOME/.exenv/bin:$PATH"
-eval "$(exenv init -)"
+# export PATH="$HOME/.exenv/bin:$PATH"
+# eval "$(exenv init -)"
 
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
@@ -25,10 +25,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 git-cleanup() {
   git fetch --prune && (git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d)
-}
-
-grm() {
-  git fetch && git rebase origin/master
 }
 
 ###### IMPORTS FOR WORK LAPTOP ######
